@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div style="text-align:center">
+      <h1>
+        {{ title }}
+      </h1>
+      <img width="700" alt="Logo Proyecto" src="/assets/logoproyecto.png"> <!--AQUI VA EL LOGO DE GLOBEX-->
+    </div>
+    <br><br>
+    <!--------------------------------------------------------------------------------------------->
+    <!-- se crea el informe -->
+    <div class="crea">
+
+      <h2 class="titulo">Informe Produccion X Vaca y Periodo De Tiempo </h2>
+    
+    <form class="informe2" (ngSubmit)="buscarInformeVaca()" [formGroup]="filtrarInformeVaca">
+    
+    
+      id Vaca: <input type="text" formControlName="textinfovaca1">
+      <br><br>
+      Fecha de inicio: <input type="date" formControlName="textinfovaca2">
+      <br><br>
+      Fecha Final: <input type="date" formControlName="textinfovaca3">
+      <br><br>
+    
+    
+    <!--resultados-->
+    <li *ngFor="let tido of MiDInformes">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+
+      <b>Fecha de registro:</b> - {{ tido.fecha_registro }}  
+      <b>Codigo Vaca:</b> - {{ tido.codigo_vaca }} 
+      <b>Nombre Raza:</b> - {{ tido.nombre_raza }}
+      <b>Litros de leche:</b> - {{ tido.litros_leche }}
+      <b>Nombre Insumo:</b> - {{ tido.NombreInsumo }} 
+      <b>Descripcion:</b> - {{ tido.descripcion }} 
+      <b>Fecha Suministro:</b> - {{ tido.fecha_suministro}}
+      <b>Cantidad Total:</b> - {{ tido.cantidadtotal }}
+      <b>Cantidad Disponible:</b> - {{ tido.cantidaddisponible }}
+      <b>Empleado A Cargo:</b> - {{ tido.EMPLEADO_A_CARGO }}
+      <b>Mano De Obra:</b> - {{ tido.ManodeObra }}
+      <b>Costo Total:</b> - {{ tido.CostoTotal }}
+      <b>Servicios:</b> - {{ tido.Servicios }}
+      
+    
+    </li>
+    
+     
+      <br><br>
+      <button type="submit">Buscar Informe</button>
+      <br><br>
+      <input type="reset" value="Limpiar Nuevo Informe">
+    
+    </form>
+    
+    
+    
+    
+    
+    <br>
+    
+    
+    <br><br>
+    
+    
+    </div>
+    
+    
+    
+    
+    <br>
+    <br><br>
+    <div class="dir">
+      <h2><a routerLink="/Inicio">INICIO</a></h2>
+    </div>
+  
+
+  </body>
+</html>

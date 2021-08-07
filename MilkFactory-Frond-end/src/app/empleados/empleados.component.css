@@ -1,0 +1,76 @@
+.bus
+{
+    position: relative;
+    left: 415px;
+    border: 3px  solid rgb(230, 26, 19); 
+    width: 800px;
+    background-color:rgb(120, 168, 223);
+    text-align: center;
+    margin: 30;
+    padding: 30;
+}
+
+.lista
+{
+    position: relative;
+    left: 415px;
+    border: 3px  solid rgb(230, 26, 19); 
+    width: 800px;
+    background-color:rgb(120, 168, 223);
+    text-align: center;
+    margin: 30;
+    padding: 30;
+}
+
+.crea
+{
+    position: relative;
+    left: 415px;
+    border: 3px  solid rgb(230, 26, 19); 
+    width: 800px;
+    background-color:rgb(120, 168, 223);
+    text-align: center;
+    margin: 30;
+    padding: 30;
+}
+
+.dir
+{
+    position: relative;
+    left: 415px;
+    border: 3px  solid rgb(230, 26, 19); 
+    width: 800px;
+    background-color:rgb(120, 168, 223);
+    text-align: center;
+    margin: 30;
+    padding: 30;
+}
+
+.edit
+{
+    position: relative;
+    left: 415px;
+    border: 3px  solid rgb(230, 26, 19); 
+    width: 800px;
+    background-color:rgb(120, 168, 223);
+    text-align: center;
+    margin: 30;
+    padding: 30;
+}
+img
+{
+    position: relative;
+    left:-70px;
+    border: 3px  solid rgb(230, 26, 19); 
+    width: 800px;
+    background-color:rgb(120, 168, 223);
+    text-align: center;
+}
+h1
+{
+    position: relative;
+    left: 415px;
+    border: 3px  solid rgb(230, 26, 19); 
+    width: 800px;
+    
+}

@@ -1,0 +1,79 @@
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <img width="700" alt="Logo Proyecto" src="/assets/logoproyecto.png"> <!--AQUI VA EL LOGO DE GLOBEX-->
+</div>
+<br><br>
+
+
+<!--------------------------------------------------------------------------------------------->
+<!-- se crea el informe -->
+
+<div class="crea">
+
+  <h2 class="titulo">Informe de produccion por empleado </h2>
+
+<form class="informe1" (ngSubmit)="buscarInforme()" [formGroup]="filtrarInformeempleado">
+
+
+  id del Empleado: <input type="text" formControlName="textinforme">
+  <br><br>
+  Fecha de inicio: <input type="date" formControlName="textinforme2">
+  <br><br>
+  Fecha Final: <input type="date" formControlName="textinforme3">
+  <br><br>
+
+
+<!--resultados-->
+<li *ngFor="let tido of MiDInformes">
+  <br/> <!--ESTE ES UN SALTO DE LINEA-->
+  <b>Nombre del Empleado:</b> - {{ tido.Empleado }}  
+  <b>Fecha de la Produccion:</b> - {{ tido.Fecha_Registro }} 
+  <b>Tipo de Identificacion:</b> - {{ tido.Tipo_Identificacion }}
+  <b>Numero de Identificacion:</b> - {{ tido.Numero_Identificacion }}
+  <b>Correo:</b> - {{ tido.Correo_Electronico }} 
+  <b>Activo (1) Inactivo (0):</b> - {{ tido.Estado_Usuario }} 
+  <b>Litros de Leche:</b> - {{ tido.Litros_Leche }}
+  <b>Tipo de Insumo:</b> - {{ tido.Insumo }}
+  <b>Descripcion del Insumo:</b> - {{ tido.Descripcion }}
+  <b>Cantidad Total:</b> - {{ tido.Cantidad_Total }}
+  <b>Cantidad Disponible:</b> - {{ tido.Cantidad_Disponible }}
+  <b>Fecha del Suministro Adquirido:</b> - {{ tido.Fecha_Suministro }}
+  <b>Costo Total de Produccion:</b> - {{ tido.Costo_Total }}
+  
+
+</li>
+
+ 
+  <br><br>
+  <button type="submit">Buscar Informe</button>
+  <br><br>
+  <input type="reset" value="Limpiar Nuevo Informe">
+
+</form>
+
+
+
+
+
+<br>
+
+
+<br><br>
+
+
+</div>
+
+
+
+
+<br>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- se incluye el link para volver al Inicio -->
+<br><br>
+<div class="dir">
+  <h2><a routerLink="/Inicio">INICIO</a></h2>
+</div>
+

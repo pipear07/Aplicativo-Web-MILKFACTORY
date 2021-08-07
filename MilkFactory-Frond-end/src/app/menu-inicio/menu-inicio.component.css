@@ -1,0 +1,253 @@
+.controles{
+    position: relative;
+    left: 50px;
+    border: 4px  solid rgb(241, 187, 36); 
+    width: 600px;
+    background-color:rgb(61, 43, 63);
+    text-align: left;
+    margin: 30;
+    padding: 30; 
+    text-align: center;
+}
+
+.titulo1{
+   
+    text-decoration: double;
+	text-decoration: none;/* se refiere a la decoración del texto, deberemos establecerlo en none a no ser que queramos tener el texto del botón subrayado*/
+    padding: 10px;/* es la distancia entre el texto y el borde del botón. En este caso está establecido en pixeles*/
+    font-weight: 600; /* se trata del grosor de las letras. Mientras más alto sea su número, más gruesas serán */
+    font-size: 20px; /* TAMAÑO DE LETRA */
+    color: #ffffff; /* COLOR BLANCO */
+    background-color: #1883ba; /* COLOR BLANCO  es el color de fondo del botón*/
+    border-radius: 6px;/* se trata del redondeado de los cantos de botón. Mientras más pixeles asignemos, más redondeados serán los bordes. Si, lo que queremos es un botón sin bordes redondeados, lo eliminaremos.*/
+    border: 2px solid #0016b0;
+
+
+}
+
+.titulo1:hover{ /*Dentro del hover colocaremos todo aquello que queremos que se modifiquen al pasar el ratón por encima con los valores que queremos establecer*/
+    color: #1883ba; /*Color azul las letras por defecto del boton, es decir siempre sera azul hasta que pase el raton*/
+    background-color: #ffffff; /*COLOR BLANCO el fondo cuando pase encima el raton*/
+   }
+
+
+   .titulo2{
+   
+    text-decoration: double;
+	text-decoration: none;/* se refiere a la decoración del texto, deberemos establecerlo en none a no ser que queramos tener el texto del botón subrayado*/
+    padding: 10px;/* es la distancia entre el texto y el borde del botón. En este caso está establecido en pixeles*/
+    font-weight: 600; /* se trata del grosor de las letras. Mientras más alto sea su número, más gruesas serán */
+    font-size: 20px; /* TAMAÑO DE LETRA */
+    color: #ffffff; /* COLOR BLANCO */
+    background-color: #1883ba; /* COLOR BLANCO  es el color de fondo del botón*/
+    border-radius: 6px;/* se trata del redondeado de los cantos de botón. Mientras más pixeles asignemos, más redondeados serán los bordes. Si, lo que queremos es un botón sin bordes redondeados, lo eliminaremos.*/
+    border: 2px solid #0016b0;
+}
+
+.titulo2:hover{ /*Dentro del hover colocaremos todo aquello que queremos que se modifiquen al pasar el ratón por encima con los valores que queremos establecer*/
+    color: #1883ba; /*Color azul las letras por defecto del boton, es decir siempre sera azul hasta que pase el raton*/
+    background-color: #ffffff; /*COLOR BLANCO el fondo cuando pase encima el raton*/
+   }
+
+   .titulo3{
+   
+    text-decoration: double;
+	text-decoration: none;/* se refiere a la decoración del texto, deberemos establecerlo en none a no ser que queramos tener el texto del botón subrayado*/
+    padding: 10px;/* es la distancia entre el texto y el borde del botón. En este caso está establecido en pixeles*/
+    font-weight: 600; /* se trata del grosor de las letras. Mientras más alto sea su número, más gruesas serán */
+    font-size: 20px; /* TAMAÑO DE LETRA */
+    color: #ffffff; /* COLOR BLANCO */
+    background-color: #1883ba; /* COLOR BLANCO  es el color de fondo del botón*/
+    border-radius: 6px;/* se trata del redondeado de los cantos de botón. Mientras más pixeles asignemos, más redondeados serán los bordes. Si, lo que queremos es un botón sin bordes redondeados, lo eliminaremos.*/
+    border: 2px solid #0016b0;
+}
+
+.titulo3:hover{ /*Dentro del hover colocaremos todo aquello que queremos que se modifiquen al pasar el ratón por encima con los valores que queremos establecer*/
+    color: #1883ba; /*Color azul las letras por defecto del boton, es decir siempre sera azul hasta que pase el raton*/
+    background-color: #ffffff; /*COLOR BLANCO el fondo cuando pase encima el raton*/
+   }
+
+   .titulo4{
+   
+    text-decoration: double;
+	text-decoration: none;/* se refiere a la decoración del texto, deberemos establecerlo en none a no ser que queramos tener el texto del botón subrayado*/
+    padding: 10px;/* es la distancia entre el texto y el borde del botón. En este caso está establecido en pixeles*/
+    font-weight: 600; /* se trata del grosor de las letras. Mientras más alto sea su número, más gruesas serán */
+    font-size: 20px; /* TAMAÑO DE LETRA */
+    color: #ffffff; /* COLOR BLANCO */
+    background-color: #1883ba; /* COLOR BLANCO  es el color de fondo del botón*/
+    border-radius: 6px;/* se trata del redondeado de los cantos de botón. Mientras más pixeles asignemos, más redondeados serán los bordes. Si, lo que queremos es un botón sin bordes redondeados, lo eliminaremos.*/
+    border: 2px solid #0016b0;
+}
+
+.titulo4:hover{ /*Dentro del hover colocaremos todo aquello que queremos que se modifiquen al pasar el ratón por encima con los valores que queremos establecer*/
+    color: #1883ba; /*Color azul las letras por defecto del boton, es decir siempre sera azul hasta que pase el raton*/
+    background-color: #ffffff; /*COLOR BLANCO el fondo cuando pase encima el raton*/
+   }
+
+   .titulo5{
+   
+    text-decoration: double;
+	text-decoration: none;/* se refiere a la decoración del texto, deberemos establecerlo en none a no ser que queramos tener el texto del botón subrayado*/
+    padding: 10px;/* es la distancia entre el texto y el borde del botón. En este caso está establecido en pixeles*/
+    font-weight: 600; /* se trata del grosor de las letras. Mientras más alto sea su número, más gruesas serán */
+    font-size: 20px; /* TAMAÑO DE LETRA */
+    color: #ffffff; /* COLOR BLANCO */
+    background-color: #1883ba; /* COLOR BLANCO  es el color de fondo del botón*/
+    border-radius: 6px;/* se trata del redondeado de los cantos de botón. Mientras más pixeles asignemos, más redondeados serán los bordes. Si, lo que queremos es un botón sin bordes redondeados, lo eliminaremos.*/
+    border: 2px solid #0016b0;
+}
+
+.titulo5:hover{ /*Dentro del hover colocaremos todo aquello que queremos que se modifiquen al pasar el ratón por encima con los valores que queremos establecer*/
+    color: #1883ba; /*Color azul las letras por defecto del boton, es decir siempre sera azul hasta que pase el raton*/
+    background-color: #ffffff; /*COLOR BLANCO el fondo cuando pase encima el raton*/
+   }
+
+
+   .titulo6{
+   
+    text-decoration: double;
+	text-decoration: none;/* se refiere a la decoración del texto, deberemos establecerlo en none a no ser que queramos tener el texto del botón subrayado*/
+    padding: 10px;/* es la distancia entre el texto y el borde del botón. En este caso está establecido en pixeles*/
+    font-weight: 600; /* se trata del grosor de las letras. Mientras más alto sea su número, más gruesas serán */
+    font-size: 20px; /* TAMAÑO DE LETRA */
+    color: #ffffff; /* COLOR BLANCO */
+    background-color: #1883ba; /* COLOR BLANCO  es el color de fondo del botón*/
+    border-radius: 6px;/* se trata del redondeado de los cantos de botón. Mientras más pixeles asignemos, más redondeados serán los bordes. Si, lo que queremos es un botón sin bordes redondeados, lo eliminaremos.*/
+    border: 2px solid #0016b0;
+}
+
+.titulo6:hover{ /*Dentro del hover colocaremos todo aquello que queremos que se modifiquen al pasar el ratón por encima con los valores que queremos establecer*/
+    color: #1883ba; /*Color azul las letras por defecto del boton, es decir siempre sera azul hasta que pase el raton*/
+    background-color: #ffffff; /*COLOR BLANCO el fondo cuando pase encima el raton*/
+   }
+
+   .titulo7{
+   
+    text-decoration: double;
+	text-decoration: none;/* se refiere a la decoración del texto, deberemos establecerlo en none a no ser que queramos tener el texto del botón subrayado*/
+    padding: 10px;/* es la distancia entre el texto y el borde del botón. En este caso está establecido en pixeles*/
+    font-weight: 600; /* se trata del grosor de las letras. Mientras más alto sea su número, más gruesas serán */
+    font-size: 20px; /* TAMAÑO DE LETRA */
+    color: #ffffff; /* COLOR BLANCO */
+    background-color: #1883ba; /* COLOR BLANCO  es el color de fondo del botón*/
+    border-radius: 6px;/* se trata del redondeado de los cantos de botón. Mientras más pixeles asignemos, más redondeados serán los bordes. Si, lo que queremos es un botón sin bordes redondeados, lo eliminaremos.*/
+    border: 2px solid #0016b0;
+}
+
+.titulo7:hover{ /*Dentro del hover colocaremos todo aquello que queremos que se modifiquen al pasar el ratón por encima con los valores que queremos establecer*/
+    color: #1883ba; /*Color azul las letras por defecto del boton, es decir siempre sera azul hasta que pase el raton*/
+    background-color: #ffffff; /*COLOR BLANCO el fondo cuando pase encima el raton*/
+   }
+
+   .titulo8{
+   
+    text-decoration: double;
+	text-decoration: none;/* se refiere a la decoración del texto, deberemos establecerlo en none a no ser que queramos tener el texto del botón subrayado*/
+    padding: 10px;/* es la distancia entre el texto y el borde del botón. En este caso está establecido en pixeles*/
+    font-weight: 600; /* se trata del grosor de las letras. Mientras más alto sea su número, más gruesas serán */
+    font-size: 20px; /* TAMAÑO DE LETRA */
+   
+    color: #ffffff; /* COLOR BLANCO */
+    background-color: #1883ba; /* COLOR BLANCO  es el color de fondo del botón*/
+    border-radius: 6px;/* se trata del redondeado de los cantos de botón. Mientras más pixeles asignemos, más redondeados serán los bordes. Si, lo que queremos es un botón sin bordes redondeados, lo eliminaremos.*/
+    border: 2px solid #0016b0;
+}
+
+.titulo8:hover{ /*Dentro del hover colocaremos todo aquello que queremos que se modifiquen al pasar el ratón por encima con los valores que queremos establecer*/
+    color: #1883ba; /*Color azul las letras por defecto del boton, es decir siempre sera azul hasta que pase el raton*/
+    background-color: #ffffff; /*COLOR BLANCO el fondo cuando pase encima el raton*/
+   
+}   
+
+
+.titulo9{
+   
+    text-decoration: double;
+	text-decoration: none;/* se refiere a la decoración del texto, deberemos establecerlo en none a no ser que queramos tener el texto del botón subrayado*/
+    padding: 10px;/* es la distancia entre el texto y el borde del botón. En este caso está establecido en pixeles*/
+    font-weight: 600; /* se trata del grosor de las letras. Mientras más alto sea su número, más gruesas serán */
+    font-size: 20px; /* TAMAÑO DE LETRA */
+   size: 300px;
+    color: #ffffff; /* COLOR BLANCO */
+    background-color: #1883ba; /* COLOR BLANCO  es el color de fondo del botón*/
+    border-radius: 6px;/* se trata del redondeado de los cantos de botón. Mientras más pixeles asignemos, más redondeados serán los bordes. Si, lo que queremos es un botón sin bordes redondeados, lo eliminaremos.*/
+    border: 2px solid #0016b0;
+}
+
+.titulo9:hover{ /*Dentro del hover colocaremos todo aquello que queremos que se modifiquen al pasar el ratón por encima con los valores que queremos establecer*/
+    color: #1883ba; /*Color azul las letras por defecto del boton, es decir siempre sera azul hasta que pase el raton*/
+    background-color: #ffffff; /*COLOR BLANCO el fondo cuando pase encima el raton*/
+   
+}   
+
+.portada1{
+    position:absolute;
+	top: 192px; /* EL TOP ES PARA ARRIBA Y ABAJO DE LA PANTALLA LOS PIXELES POSITIVOS SON PARA ABAJO Y LOS NEGATIVOS ARRIBA*/
+	left:800px; /* EL LEFT ES PARA MOVERLO DE IZQUIERDA A DERECHA*/
+}
+
+.fon{
+    background-image: url("/assets/portada1a.jpg");
+   width: 1900px;
+   height: 905px;
+}
+
+.acerca{
+    position: absolute;
+    top: 802px; /* EL TOP ES PARA ARRIBA Y ABAJO DE LA PANTALLA LOS PIXELES POSITIVOS SON PARA ABAJO Y LOS NEGATIVOS ARRIBA*/
+	left:50px; /* EL LEFT ES PARA MOVERLO DE IZQUIERDA A DERECHA*/
+    border: 4px  solid rgb(241, 187, 36); 
+    width: 1800px;
+    background-color:rgb(61, 43, 63);
+    text-align: left;
+    margin: 30;
+    padding: 30; 
+    text-align: center;
+   
+}
+
+.acerca2{
+    color: #ffffff; /* COLOR BLANCO */
+}
+
+.informacion{
+    position: absolute;
+    top: 198px; /* EL TOP ES PARA ARRIBA Y ABAJO DE LA PANTALLA LOS PIXELES POSITIVOS SON PARA ABAJO Y LOS NEGATIVOS ARRIBA*/
+	left:1400px; /* EL LEFT ES PARA MOVERLO DE IZQUIERDA A DERECHA*/
+    border: 4px  solid rgb(241, 187, 36); 
+    width: 400px;
+    background-color:rgb(61, 43, 63);
+    text-align: left;
+    margin: 30;
+    padding: 30; 
+}
+
+.informacion{
+    text-align: center;
+}
+
+.ayuda{
+    color: ivory;
+}
+
+.informacion2{
+   
+    text-decoration: double;
+	text-decoration: none;/* se refiere a la decoración del texto, deberemos establecerlo en none a no ser que queramos tener el texto del botón subrayado*/
+    padding: 10px;/* es la distancia entre el texto y el borde del botón. En este caso está establecido en pixeles*/
+    font-weight: 600; /* se trata del grosor de las letras. Mientras más alto sea su número, más gruesas serán */
+    font-size: 20px; /* TAMAÑO DE LETRA */
+   
+    color: #ffffff; /* COLOR BLANCO */
+    background-color: #1883ba; /* COLOR BLANCO  es el color de fondo del botón*/
+    border-radius: 6px;/* se trata del redondeado de los cantos de botón. Mientras más pixeles asignemos, más redondeados serán los bordes. Si, lo que queremos es un botón sin bordes redondeados, lo eliminaremos.*/
+    border: 2px solid #0016b0;
+}
+
+.informacion2:hover{ /*Dentro del hover colocaremos todo aquello que queremos que se modifiquen al pasar el ratón por encima con los valores que queremos establecer*/
+    color: #1883ba; /*Color azul las letras por defecto del boton, es decir siempre sera azul hasta que pase el raton*/
+    background-color: #ffffff; /*COLOR BLANCO el fondo cuando pase encima el raton*/
+   
+}  
+

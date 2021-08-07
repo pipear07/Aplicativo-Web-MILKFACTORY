@@ -1,0 +1,153 @@
+   <div style="text-align:center">
+      <h1>
+        {{ title }}
+      </h1>
+      <img width="700" alt="Logo Proyecto" src="/assets/logoproyecto.png"> <!--AQUI VA EL LOGO DE GLOBEX-->
+    
+    </div>
+    <br><br>
+    <!------------------------------------------------------------>
+        <!-- para mostrar el listado vacas -->
+    
+        <div class="lista">
+    
+          <h2>vacas: </h2>
+        
+        
+          <button (click)="ConsultarVacas()">consultar</button>
+        
+          <div class = "esp">
+            <ul>
+              <h2>{{tituloVacas}}</h2>
+              <li *ngFor="let tido of Vacas"> <!--RECUERDEN QUE TipDocs es el vector en .ts-->
+                <b>N° Registro:</b> {{ tido.id_vaca}}
+                <b>Nombre Raza:</b>{{tido.nombre_raza}}
+                <b>Descripciom:</b>{{tido.descripcion}} <!--IMPORTANTEEEEEEEEEEEEEEEEE!!!-->
+                <b>Codigo Vaca:</b>{{ tido.codigo_vaca}}
+                <b>Fecha Registro:</b>{{tido.fecha_registro}}
+                <b>Fecha Nacimiento:</b>{{tido.fecha_nacimiento}}  <!--IMPORTANTE!!!! ESTAS VARIABLES TIENEN QUE SER LAS MISMAS EN EL POSTMAN PARA QUE FUNCIONE, OSEA ABREN EL POSTMAN LO CORREN EN GET, Y COPIAN COMO SE LLAMA CADA VARIABLE DESPUES DEL TIDO, SINO NUNCA LES VA A CORRE-->
+                <!--{{ tido.iniciales_tip_doc}}-->
+              </li>
+            </ul>
+          </div>
+          <br>
+        </div>
+        
+        <br><br>
+<!--------------------------------------------------------------------------------------------->
+    <!-- para mostrar un sola vaca -->
+    <div class="bus">
+      <h2>vaca a seleccionar </h2>
+    
+     <h3>Id vaca </h3>
+    
+      <form (ngSubmit)="buscarVaca()" [formGroup]="FiltrarVaca">
+        <input type="text" formControlName="textfiltro">
+        <!-- <div *ngIf="submitted && f.textfiltro.errors" class="invalid-feedback">
+         <div *ngIf="f.textfiltro.errors.required" class="error-validate"> Id requerido</div>
+        </div>-->
+        <button type="submit" >Buscar Vaca</button>
+        <br><br>
+        <input type="reset" value="Limpiar campos">
+      </form>
+    
+      <ul>
+        <h2>{{titloVaca}}</h2>
+        <li *ngFor="let tido of MiVaca">
+          <b>Codigo Vaca:</b>{{ tido.codigo_vaca}}
+          <b>N° Registro Vaca:</b>{{ tido.id_vaca}} -
+          <b>Nombre Raza:</b>{{tido.nombre_raza}}-
+          <b>Descripcion:</b>{{tido.descripcion}} <!--IMPORTANTEEEEEEEEEEEEEEEEE!!!-->
+          <b>Fecha Registro:</b>{{tido.fecha_registro}}
+          <b>Fecha Nacimiento:</b>{{tido.fecha_nacimiento}}
+        </li> <!--IMPORTANTE!! DEBEN TENER LAS MISMAS VARIABLES DEL POSTMAN-->
+      </ul>
+      <br>
+    
+    </div>
+    
+    <br><br>
+    <!--------------------------------------------------------------------------------------------->
+    <!-- para crear un  Tipo de Documento -->
+    
+    <div class="crea">
+    
+      <h2>Crear una Vaca nueva </h2>
+    
+    <form (ngSubmit)="InsertarVaca()" [formGroup]="InsertarGVaca">
+      Raza: <input type="text" formControlName="textid_raza">
+      <br><br>
+      Codigo : <input type="text" formControlName="textcodigo_vaca">
+      <br><br>
+      fecha registro: <input type="date" formControlName="textfecha_registro">
+      <br><br>
+      fecha nacimiento : <input type="date" formControlName="textfecha_nacimiento">
+     <!-- <div *ngIf="submitted && g.textTipDoc.errors && g.textiniTipDoc.errors " class="invalid-feedback">
+        <div *ngIf="g.textTipDoc.errors.required" class="error-validate"> Id requerido</div>
+      </div>-->
+     
+      <br><br>
+      <button type="submit">Insertar Vaca</button>
+      <br><br>
+      <input type="reset" value="Limpiar campos">
+    
+    </form>
+    <br>
+    </div>
+    
+    <br><br>
+
+    <!--------------------------------------------------------------------------------------------->
+    <!-- para actualizar una raza -->
+    
+    <div class="edit">
+      <h2>Editar Vaca </h2>
+      <form (ngSubmit)="buscarEditarVaca()" [formGroup]="ActualizarAVaca">
+        id vaca a editar:<input type="text" formControlName="idVaca">
+    
+    
+    
+    <!--CUIDADO-->
+    <!-- NO TOCAR ESTOS COMENTARIOS DEL DIV *ngIf de Angular, YA QUE SON PARA DETECTAR LOS ERRORES DEL FRONT END PERO ESTAS DESACTIVADOS YA QUE GENERAN ERROR-->
+      
+    <!-- <div *ngIf="submitted && f.ActualizarIdipDoc.errors" class="invalid-feedback">
+          <div *ngIf="f.ActualizarIdipDoc.errors.required" class="error-validate">Id requerido</div>
+        </div> -->
+        <button  type="submit">Buscar Vaca</button>
+        <br><br>
+    
+        <li *ngFor="let tido of MiVacaE"><!--IMPORTANTE!! DEBEN TENER LAS MISMAS VARIABLES DEL POSTMAN-->
+          <!--Nueva Raza  <input type="text" [value]="tido.nombre_raza" formControlName="nuevaRaza">-->
+
+          <p>
+            Editar Raza (*):
+            <select formControlName="nuevoid_raza">
+              <option *ngFor= "let tido of Raza" [value]="tido.id_raza" >
+                {{tido.nombre_raza}}
+              </option>
+            </select>
+          </p>
+
+          <br><br> 
+          Raza Asignada <input disabled type="text" [value]="tido.nombre_raza" formControlName="Ncodigovaca" id="codigovaca" >
+          <br><br> 
+          Editar codigo <input type="text" [value]="tido.codigo_vaca" formControlName="Ncodigovaca" id="codigovaca" >
+          <br><br>
+          Editar fecha registro  <input type="datetime" [value]="tido.fecha_registro" formControlName="Nfecharegistro"id="fecharegistro">
+          <br><br>
+          Editar fecha nacimiento  <input type="datetime" [value]="tido.fecha_nacimiento" formControlName="Nfechanacimiento"id ="fechanacimiento">
+          <br><br>
+        </li>
+        <br>
+        <button (click)="ActualizarVaca()">Actualizar vaca</button>
+        <br><br>
+      </form>
+    </div>
+    
+    <!--------------------------------------------------------------------------------------------->
+    <!-- se incluye el link para volver al Inicio -->
+    <br><br>
+    <div class="dir">
+      <h2><a routerLink="/Inicio">INICIO</a></h2>
+    </div>
+  

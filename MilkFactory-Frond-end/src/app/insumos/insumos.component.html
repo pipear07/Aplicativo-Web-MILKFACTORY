@@ -1,0 +1,148 @@
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <img width="700" alt="Logo Proyecto" src="/assets/logoproyecto.png"> <!--AQUI VA EL LOGO DE GLOBEX-->
+</div>
+<br><br>
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar el listado de Insumos Leche -->
+
+<div class="lista">
+
+  <h2>Mostramos los registros de Insumos de Leche: </h2>
+
+  <button (click)="consultaInsumosLeche()">consultar</button>
+
+  <div class = "esp">
+    <ul>
+      <h2>{{tituloInsumosLeche}}</h2>
+      <li *ngFor="let tido of InsumosLeche"> <!--RECUERDEN QUE InsumosLeche es el vector en .ts-->
+        {{ tido.id_insumo }} - <!--IMPORTANTEEEEEEEEEEEEEEEEE!!!-->
+        {{ tido.descripcion }}  <!--IMPORTANTE!!!! ESTAS VARIABLES TIENEN QUE SER LAS MISMAS EN EL POSTMAN PARA QUE FUNCIONE, OSEA ABREN EL POSTMAN LO CORREN EN GET, Y COPIAN COMO SE LLAMA CADA VARIABLE DESPUES DEL TIDO, SINO NUNCA LES VA A CORRE-->
+        {{ tido.NombreInsumo }}
+        {{ tido.fecha_suministro }}
+        {{ tido.cantidadtotal }}
+        {{ tido.cantidaddisponible }}    
+        
+      </li> 
+    </ul>
+  </div>
+  <br>
+</div>
+
+<br><br>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar un solo Insumo de Leche -->
+<div class="bus">
+  <h2>Mostramos el Insumos de Leche escogido </h2>
+
+  <h3>Id del Insumo de Leche a mostrar</h3>
+
+  <form (ngSubmit)="buscarInsumosLeche()" [formGroup]="filtrarInsumoLeche">
+    <input type="text" formControlName="textfiltro">
+    <!-- <div *ngIf="submitted && f.textfiltro.errors" class="invalid-feedback">
+     <div *ngIf="f.textfiltro.errors.required" class="error-validate"> Id requerido</div>
+    </div>-->
+    <button type="submit" >Buscar InsumoLeche</button>
+  </form>
+
+  <ul>
+    <h2>{{titloInsumoLeche}}</h2>
+    <li *ngFor="let tido of MiInsumoLeche">
+        {{ tido.id_insumo }} - 
+        {{ tido.descripcion }}  <!--OJO TIENEN QUE SER LAS MISMAS VARIABLES DEL POSTMAN, SI TIENE 7 VARIABLES , SON 7 QUE TOCA COLOCAR AQUI EXACTAMENTE COMO SE LLAMAN-->
+        {{ tido.NombreInsumo }}
+        {{ tido.fecha_suministro }}
+        {{ tido.cantidadtotal }}
+        {{ tido.cantidaddisponible }}
+    </li> <!--IMPORTANTE!! DEBEN TENER LAS MISMAS VARIABLES DEL POSTMAN-->
+  </ul>
+  <br>
+
+</div>
+
+<br><br>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para crear un  Detalle de Produccion -->
+
+<div class="crea" >
+
+  <h2>Crear un Insumo de Leche </h2>
+
+
+<form (ngSubmit)="InsertarInsumosLeche()" [formGroup]="InsertarGInsumoLeche">
+  Descripcion: <input type="text" formControlName="textdescripcion">
+  <br><br>
+  Nombre de Insumo: <input type="text" formControlName="textNombreInsumo">
+  <br><br>
+  Fecha de Registro: <input type="date" formControlName="textfecha_suministro">
+ <br><br>
+  Cantidad Total: <input type="text" formControlName="textcantidadtotal">
+  <br><br>
+  Cantidad Disponible: <input type="text" formControlName="textcantidaddisponible">
+  <br><br>
+  
+ 
+
+ <!-- <div *ngIf="submitted && g.textInsumoLeche.errors && g.textiniInsumoLeche.errors " class="invalid-feedback">
+    <div *ngIf="g.textInsumoLeche.errors.required" class="error-validate"> Id requerido</div>
+  </div>-->
+ 
+  <br><br>
+  <button type="submit">Insertar Insumo de Leche</button>
+  <br><br>
+  <input type="reset" value="Limpiar Nuevo Insumo de Leche">
+
+</form>
+<br>
+</div>
+
+<br><br>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para actualizar un  Insumo de Leche -->
+
+
+<div class="edit">
+  <h2>Editar un Insumo de Leche</h2>
+  <form (ngSubmit)="buscarEditarInsumosLeche()" [formGroup]="ActualizarAInsumoLeche">
+    Id Insumo de Leche: <input type="text" formControlName="id_insumo" id = "idinsumo">
+   
+    <button type="submit">Buscar Insumo de Leche a Editar</button>
+    <br><br>
+
+    
+    <li *ngFor="let tido of MiInsumoLecheE"><!--IMPORTANTE!! DEBEN TENER LAS MISMAS VARIABLES DEL POSTMAN-->
+     
+      
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Descripción:  <input type="text" [value]="tido.descripcion" formControlName="nuevodescripcion" id="descripcion">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Nombre de Insumo:  <input type="text" [value]="tido.NombreInsumo" formControlName="nuevoNombreInsumo" id="NombreInsumo">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Fecha de Suministro:  <input type="datetime" [value]="tido.fecha_suministro" formControlName="nuevofecha_suministro" id="fecha_suministro">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Cantidad Total:  <input type="text" [value]="tido.cantidadtotal" formControlName="nuevocantidadtotal" id="cantidadtotal">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Cantidad Disponible:  <input type="text" [value]="tido.cantidaddisponible" formControlName="nuevocantidaddisponible" id="cantidaddisponible">
+      
+
+     
+     <!-- Nuevas Iniciales <input type="text" [value]="tido.iniciales_tip_doc" formControlName="nuevoIniTipDoc">-->
+    </li>
+    <br>
+    <button (click)="ActualizarInsumoLeche()">Actualizar Insumo de Leche</button>
+    <br><br>
+  </form>
+</div>
+
+
+<!--------------------------------------------------------------------------------------------->
+<!-- se incluye el link para volver al Inicio -->
+<br><br>
+<div class="dir">
+  <h2><a routerLink="/Inicio">INICIO</a></h2>
+</div>

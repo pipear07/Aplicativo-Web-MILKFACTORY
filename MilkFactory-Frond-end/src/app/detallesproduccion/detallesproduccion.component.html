@@ -1,0 +1,285 @@
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <img width="700" alt="Logo Proyecto" src="/assets/logoproyecto.png"> <!--AQUI VA EL LOGO DE GLOBEX-->
+</div>
+<br><br>
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar el listado de Tipos de Documentos -->
+
+<div class="lista" >
+
+  <h2>Mostramos los registros de Detalles de Produccion: </h2>
+
+
+  <button (click)="consultadetallesproduccion()">consultar</button>
+
+  <div class = "esp">
+    <ul>
+      <h2>{{tituloDProduccion}}</h2>
+      <li *ngFor="let tido of DProducciones"> <!--RECUERDEN QUE TipDocs es el vector en .ts-->
+        <br/> <!--ESTE ES UN SALTO DE LINEA-->
+        - <b>Registro #:</b>
+        {{ tido.id_detallesproduccion }} - <b>Tipo de Idetificacion:</b><!--IMPORTANTEEEEEEEEEEEEEEEEE!!!-->
+        {{ tido.nombre_tipo_identificacion }} - <b>Contacto:</b>
+        {{ tido.correo_electronico}} - <b>Numero de Identificacion:</b>
+        {{ tido.num_identificacion}} - <b>Nombre del Empleado:</b>
+        {{ tido.Nombre_del_Empleado}} - <b>Fecha de Registro del Empleado:</b>
+        {{ tido.Fecha_de_registro_empleado}} - <b>Cargo:</b>
+        {{ tido.nombre_rol}} - <b>Tipo de Insumo Usado:</b>
+        {{ tido.NombreInsumo}} - <b>Descripcion del Insumo:</b>
+        {{ tido.Descripcion_del_insumo}} - <b>Fecha Suministrada del Insumo:</b>
+        {{ tido.fecha_suministro}} - <b>Cantidad Total:</b>
+        {{ tido.cantidadtotal}} - <b>Cantidad Disponible:</b>
+        {{ tido.cantidaddisponible}} - <b>Codigo de la Vaca:</b>
+        {{ tido.codigo_vaca}} - <b>Fecha de Registro de la Vaca:</b>
+        {{ tido.fecha_registro_de_vaca}} - <b>Fecha Nacimiento de la Vaca:</b>
+        {{ tido.fecha_nacimiento}} - <b>Raza de Vaca:</b>
+        {{ tido.nombre_raza}} - <b>Descripcion de la Raza:</b>
+        {{ tido.Descripcion_de_la_raza_Vaca}} - <b>Activo (1) o Inactivo (0):</b>
+        {{ tido.activo}} - <b>Mano de Obra:</b>
+        {{ tido.ManodeObra }} - <b>Fertilizantes:</b>
+        {{ tido.Fertilizantes }} - <b>Arreglo de Praderas:</b>
+        {{ tido.Arreglopraderas }} - <b>Mantenimiento de Maquinas:</b>
+        {{ tido.MantenimientoMaquinas }} - <b>Reparacion de Cercas:</b>
+        {{ tido.ReparacionCercas }} - <b>Servicios:</b>
+        {{ tido.Servicios }} - <b>Costo Total:</b>
+        {{ tido.CostoTotal }} - <b>Fecha de la Produccion:</b>
+        {{ tido.Fecha_de_registro_de_la_produccion }} - <b>Litros de Leche:</b>
+        {{ tido.litros_leche }} 
+      
+      </li>
+    </ul>
+  </div>
+  <br>
+</div>
+
+<br><br>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar un solo Detalle de Produccion -->
+<div class="bus">
+  <h2>Mostramos el Detalle de Produccion escogido </h2>
+
+  <h3>Id del Detalle de Produccion a mostrar</h3>
+
+  <form (ngSubmit)="buscardetallesproduccion()" [formGroup]="filtrarDProduccion">
+    <input type="text" formControlName="textfiltro">
+    <!-- <div *ngIf="submitted && f.textfiltro.errors" class="invalid-feedback">
+     <div *ngIf="f.textfiltro.errors.required" class="error-validate"> Id requerido</div>
+    </div>-->
+    <button type="submit" >Buscar Detalle de Produccion</button>
+  </form>
+
+  <ul>
+    <h2>{{titloDProduccion}}</h2>
+    
+    <li *ngFor="let tido of MiDProducciones"> <!--RECUERDEN QUE TipDocs es el vector en .ts-->
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      - <b>Registro #:</b>
+      {{ tido.id_detallesproduccion }} - <b>Tipo de Idetificacion:</b><!--IMPORTANTEEEEEEEEEEEEEEEEE!!!-->
+      {{ tido.nombre_tipo_identificacion }} - <b>Contacto:</b>
+      {{ tido.correo_electronico}} - <b>Numero de Identificacion:</b>
+      {{ tido.num_identificacion}} - <b>Nombre del Empleado:</b>
+      {{ tido.Nombre_del_Empleado}} - <b>Fecha de Registro del Empleado:</b>
+      {{ tido.Fecha_de_registro_empleado}} - <b>Cargo:</b>
+      {{ tido.nombre_rol}} - <b>Tipo de Insumo Usado:</b>
+      {{ tido.NombreInsumo}} - <b>Descripcion del Insumo:</b>
+      {{ tido.Descripcion_del_insumo}} - <b>Fecha Suministrada del Insumo:</b>
+      {{ tido.fecha_suministro}} - <b>Cantidad Total:</b>
+      {{ tido.cantidadtotal}} - <b>Cantidad Disponible:</b>
+      {{ tido.cantidaddisponible}} - <b>Codigo de la Vaca:</b>
+      {{ tido.codigo_vaca}} - <b>Fecha de Registro de la Vaca:</b>
+      {{ tido.fecha_registro_de_vaca}} - <b>Fecha Nacimiento de la Vaca:</b>
+      {{ tido.fecha_nacimiento}} - <b>Raza de Vaca:</b>
+      {{ tido.nombre_raza}} - <b>Descripcion de la Raza:</b>
+      {{ tido.Descripcion_de_la_raza_Vaca}} - <b>Activo (1) o Inactivo (0):</b>
+      {{ tido.activo}} - <b>Mano de Obra:</b>
+      {{ tido.ManodeObra }} - <b>Fertilizantes:</b>
+      {{ tido.Fertilizantes }} - <b>Arreglo de Praderas:</b>
+      {{ tido.Arreglopraderas }} - <b>Mantenimiento de Maquinas:</b>
+      {{ tido.MantenimientoMaquinas }} - <b>Reparacion de Cercas:</b>
+      {{ tido.ReparacionCercas }} - <b>Servicios:</b>
+      {{ tido.Servicios }} - <b>Costo Total:</b>
+      {{ tido.CostoTotal }} - <b>Fecha de la Produccion:</b>
+      {{ tido.Fecha_de_registro_de_la_produccion }} - <b>Litros de Leche:</b>
+      {{ tido.litros_leche }} 
+    
+    </li>
+
+  </ul>
+  <br>
+
+</div>
+
+<br><br>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para crear un  Detalle de Produccion -->
+
+<div class="crea" >
+
+  <h2>Crear un Detalle de Produccion </h2>
+
+
+<form (ngSubmit)="Insertardetallesproduccion()" [formGroup]="InsertarGDProduccion">
+  Id Insumo: <input type="text" formControlName="textinsumo">
+  <br><br>
+  Id Vaca: <input type="text" formControlName="textvaca">
+  <br><br>
+  Id empleado: <input type="text" formControlName="textempleado">
+ <br><br>
+  Costos de Mano de Obra: <input type="text" formControlName="textManodeObra">
+  <br><br>
+  Costos de Fertilizantes: <input type="text" formControlName="textFertilizantes">
+  <br><br>
+  Costos de Arreglo de Praderas: <input type="text" formControlName="textArreglopraderas">
+  <br><br>
+  Costos de Mantenimiento de Maquinas: <input type="text" formControlName="textMantenimientoMaquinas">
+  <br><br>
+  Costos de Reparacion de Cercas: <input type="text" formControlName="textCercas">
+  <br><br>
+  Costos de Servicios: <input type="text" formControlName="textServicios">
+  <br><br>
+  Costos Total: <input type="text" formControlName="textCostoTotal" id="total" value=0 disabled>
+  <br><br>
+  Fecha de Registro de Produccion: <input type="date" formControlName="textFechaProduccion">
+  <br><br>
+  Litro de Leche: <input type="text" formControlName="textLitroLeeche">
+  <br><br>
+ 
+ <!-- Iniciales Tipo de Documento: <input type="text" formControlName="textiniTipDoc">-->
+
+ <!-- <div *ngIf="submitted && g.textTipDoc.errors && g.textiniTipDoc.errors " class="invalid-feedback">
+    <div *ngIf="g.textTipDoc.errors.required" class="error-validate"> Id requerido</div>
+  </div>-->
+ 
+  <br><br>
+  <button type="submit">Insertar Detalle de Produccion</button>
+  <br><br>
+  <input type="reset" value="Limpiar Nuevo Detalle de Produccion">
+
+</form>
+<br>
+</div>
+
+<br><br>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para actualizar un  Detalle de Produccion -->
+
+
+
+<div class="edit">
+  <h2>Editar un Detalle de Produccion</h2>
+  <form (ngSubmit)="buscarEditardetallesproduccion()" [formGroup]="ActualizarADProduccion">
+    Id Detalle de Produccion: <input type="text" formControlName="idproduccion">
+   <!--
+    <p>
+      <select formControlName="nuevoid_empleado"> 
+        
+          <option *ngFor="let tidoo of Empleados" [value]="tidoo.id_empleado">
+            {{tidoo.Nombre_del_Empleado}}
+          [value]={{tidoo.id_empleado}}
+          </option>
+    </select>
+    </p>
+  -->
+
+
+<!--CUIDADO-->
+<!-- NO TOCAR ESTOS COMENTARIOS DEL DIV *ngIf de Angular, YA QUE SON PARA DETECTAR LOS ERRORES DEL FRONT END PERO ESTAS DESACTIVADOS YA QUE GENERAN ERROR-->
+  
+<!-- <div *ngIf="submitted && f.ActualizarIdipDoc.errors" class="invalid-feedback">
+      <div *ngIf="f.ActualizarIdipDoc.errors.required" class="error-validate">Id requerido</div>
+    </div> -->
+    <button type="submit">Buscar Detalle de Produccion a Editar</button>
+    <br><br>
+
+    
+
+    <li *ngFor="let tido of MiDProduccionesE"><!--IMPORTANTE!! DEBEN TENER LAS MISMAS VARIABLES DEL POSTMAN-->
+     
+      <p>
+        Editar Insumo:
+        <select formControlName="nuevoid_insumo">  <!--ESTAS SON LAS LISTAN PLEGABLES, INSUMO ES EL VECTOR Y TIDOO LA VARIABLE QUE LE PASA LOS DATOS-->
+          <!--colocAR AQUI LOS SELECT-->     
+            <option *ngFor="let tidoooo of Insumo" [value]="tidoooo.id_insumo" > 
+              {{tidoooo.NombreInsumo}}
+            
+            </option>
+        </select>
+      </p>
+
+      <p>
+        Editar Vaca:
+        <select formControlName="nuevoid_vaca">  <!--ESTAS SON LAS LISTAN PLEGABLES, VACA ES EL VECTOR Y TIDOO LA VARIABLE QUE LE PASA LOS DATOS-->
+          <!--colocAR AQUI LOS SELECT-->     
+            <option *ngFor="let tidooo of Vaca" [value]="tidooo.id_vaca" selected>
+              {{tidooo.codigo_vaca}}
+            
+            </option>
+      </select>
+      </p>
+
+
+
+     
+     
+      <p>
+        Editar Empleado: <!--ESTAS SON LAS LISTAN PLEGABLES, EMPLEADOS ES EL VECTOR Y TIDOO LA VARIABLE QUE LE PASA LOS DATOS-->
+        <select formControlName="nuevoid_empleado"> 
+          <!--colocAR AQUI LOS SELECT-->     
+            <option *ngFor="let tidoo of Empleados" [value]="tidoo.id_empleado" selected>
+              {{tidoo.Nombre_del_Empleado}}
+            - {{tidoo.id_empleado}}
+            </option>
+      </select>
+      </p>
+     
+    
+
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Empleado Asignado:  <input disabled type="text" [value]="tido.Nombre_del_Empleado" >
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Insumo Asignado:  <input disabled type="text" [value]="tido.NombreInsumo" >
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Vaca Asignada:  <input disabled type="text" [value]="tido.codigo_vaca" >
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Mano de Obra:  <input type="text" [value]="tido.ManodeObra" formControlName="nuevoManodeObra" id="ManodeObra">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Fertilizantes:  <input type="text" [value]="tido.Fertilizantes" formControlName="nuevoFertilizantes" id="Fertilizantes">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Arreglo de Praderas:  <input type="text" [value]="tido.Arreglopraderas" formControlName="nuevoArreglopraderas" id="Arreglopraderas">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Mantenimiento en Maquinas:  <input type="text" [value]="tido.MantenimientoMaquinas" formControlName="nuevoMantenimientoMaquinas" id="MantenimientoMaquinas">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Reparacion de Cercas:  <input type="text" [value]="tido.ReparacionCercas" formControlName="nuevoReparacionCercas" id="ReparacionCercas">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Servicios:  <input type="text" [value]="tido.Servicios" formControlName="nuevoServicios" id="Servicios">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Costo Total:  <input type="text" [value]="tido.CostoTotal" formControlName="nuevocostototal" id="costototal">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Fecha de Registro de la Produccion:  <input type="datetime" [value]="tido.Fecha_de_registro_de_la_produccion" formControlName="nuevofecharegistro" id="fecharegistro">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Litro de Leche:  <input type="text" [value]="tido.litros_leche" formControlName="nuevolechelitro" id="lechelitro">
+
+     
+     <!-- Nuevas Iniciales <input type="text" [value]="tido.iniciales_tip_doc" formControlName="nuevoIniTipDoc">-->
+    </li>
+    <br>
+    <button (click)="Actualizardetallesproduccion()">Actualizar Tipo de Documento</button>
+    <br><br>
+  </form>
+</div>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- se incluye el link para volver al Inicio -->
+<br><br>
+<div class="dir">
+  <h2><a routerLink="/Inicio">INICIO</a></h2>
+</div>
+

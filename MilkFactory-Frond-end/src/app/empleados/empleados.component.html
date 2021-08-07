@@ -1,0 +1,222 @@
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <img width="700" alt="Logo Proyecto" src="/assets/logoproyecto.png"> <!--AQUI VA EL LOGO DE GLOBEX-->
+</div>
+<br><br>
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar el listado de Empleados -->
+<div class="lista" >
+
+  <h2>Mostramos los registros de Empleados: </h2>
+
+
+  <button (click)="consultaEmpleados()">consultar</button>
+
+  <div class = "esp">
+    <ul>
+      <h2>{{tituloEmpleados}}</h2>
+      <li *ngFor="let tido of Empleados"> <!--RECUERDEN QUE TipDocs es el vector en .ts-->
+        <br/> <!--ESTE ES UN SALTO DE LINEA-->
+        - <b>Registro #:</b>
+        {{ tido.id_empleado }} - <b>Rol:</b><!--IMPORTANTEEEEEEEEEEEEEEEEE!!!-->
+        {{ tido.nombre_rol }} - <b>Tipo de Identificacion</b>
+        {{ tido.nombre_tipo_identificacion}} - <b>Nombre del Empleado:</b>
+        {{ tido.Nombre_del_Empleado}} - <b>Número de Identificación:</b>
+        {{ tido.num_identificacion}} - <b>Contacto:</b>
+        {{ tido.correo_electronico}} - <b>Estado:</b>
+        {{ tido.activo}} - <b>Fecha de Registro:</b>
+        {{ tido.fecha_registro}} 
+      
+      </li>
+    </ul>
+  </div>
+  <br>
+</div>
+
+<br><br>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar un solo Empleado -->
+<div class="bus">
+  <h2>Mostramos el Empleado escogido </h2>
+
+  <h3>Id del Empleado a mostrar</h3>
+
+  <form (ngSubmit)="buscarEmpleados()" [formGroup]="filtrarEmpleado">
+    <input type="text" formControlName="textfiltro">
+    <!-- <div *ngIf="submitted && f.textfiltro.errors" class="invalid-feedback">
+     <div *ngIf="f.textfiltro.errors.required" class="error-validate"> Id requerido</div>
+    </div>-->
+    <button type="submit" >Buscar Empleado</button>
+  </form>
+
+  <ul>
+    <h2>{{titloEmpleado}}</h2>
+    
+    <li *ngFor="let tido of MiEmpleado"> <!--RECUERDEN QUE TipDocs es el vector en .ts-->
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      - <b>Registro #:</b>
+        {{ tido.id_empleado }} - <b>Rol:</b><!--IMPORTANTEEEEEEEEEEEEEEEEE!!!-->
+        {{ tido.nombre_rol }} - <b>Tipo de Identificacion</b>
+        {{ tido.nombre_tipo_identificacion}} - <b>Nombre del Empleado:</b>
+        {{ tido.primer_nombre}}  {{ tido.segundo_nombre}}  {{ tido.primer_apellido}}  {{ tido.segundo_apellido}} -<b>Número de Identificación:</b>
+        {{ tido.num_identificacion}} - <b>Contacto:</b>
+        {{ tido.correo_electronico}} - <b>Estado:</b>
+        {{ tido.activo}} - <b>Fecha de Registro:</b>
+        {{ tido.fecha_registro}} 
+    
+    </li>
+
+  </ul>
+  <br>
+
+</div>
+
+<br><br>
+
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para crear un  Empleado -->
+
+<div class="crea" >
+
+  <h2>Crear un Empleado </h2>
+
+
+<form (ngSubmit)="InsertarEmpleados()" [formGroup]="InsertarGEmpleado">
+  Id Rol: <input type="text" formControlName="textnombre_rol">
+  <br><br>
+  Id Tipo de Identificación: <input type="text" formControlName="textnombre_tipo_identificacion">
+  <br><br>
+  Primer Nombre: <input type="text" formControlName="textprimer_nombre">
+ <br><br>
+  Segundo Nombre: <input type="text" formControlName="textsegundo_nombre">
+  <br><br>
+  Primer Apellido: <input type="text" formControlName="textprimer_apellido">
+  <br><br>
+  Segundo Apellido: <input type="text" formControlName="textsegundo_apellido">
+  <br><br>
+  Número de Identificación: <input type="text" formControlName="textnum_identificacion">
+  <br><br>
+  Contacto: <input type="text" formControlName="textcorreo_electronico">
+  <br><br>
+  Estado: <input type="text" formControlName="textactivo">
+  <br><br>
+  Fecha de Registro: <input type="date" formControlName="textfecha_registro">
+  <br><br>
+  
+ 
+ 
+  <br><br>
+  <button type="submit">Insertar Empleado</button>
+  <br><br>
+  <input type="reset" value="Limpiar Nuevo Empleado">
+
+</form>
+<br>
+</div>
+
+<br><br>
+
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para actualizar un  Empleado -->
+
+
+
+<div class="edit">
+  <h2>Editar un Empleado</h2>
+  <form (ngSubmit)="buscarEditarEmpleados()" [formGroup]="ActualizarAEmpleado">
+    Id Empleado: <input type="text" formControlName="id_empleado" id ="idempleado">
+   <!--
+    <p>
+      <select formControlName="nuevoid_empleado"> 
+        
+          <option *ngFor="let tidoo of Empleados" [value]="tidoo.id_empleado">
+            {{tidoo.Nombre_del_Empleado}}
+          [value]={{tidoo.id_empleado}}
+          </option>
+    </select>
+    </p>
+  -->
+
+
+<!--CUIDADO-->
+<!-- NO TOCAR ESTOS COMENTARIOS DEL DIV *ngIf de Angular, YA QUE SON PARA DETECTAR LOS ERRORES DEL FRONT END PERO ESTAS DESACTIVADOS YA QUE GENERAN ERROR-->
+  
+<!-- <div *ngIf="submitted && f.ActualizarIdipDoc.errors" class="invalid-feedback">
+      <div *ngIf="f.ActualizarIdipDoc.errors.required" class="error-validate">Id requerido</div>
+    </div> -->
+    <button type="submit">Buscar Empleado a Editar</button>
+    <br><br>
+
+    
+
+    <li *ngFor="let tido of MiEmpleadoE"><!--IMPORTANTE!! DEBEN TENER LAS MISMAS VARIABLES DEL POSTMAN-->
+     
+      <p>
+        Editar Rol (*):
+        <select id = "rol"  formControlName="nuevoid_rol">  <!--ESTAS SON LAS LISTAN PLEGABLES, INSUMO ES EL VECTOR Y TIDOO LA VARIABLE QUE LE PASA LOS DATOS-->
+          <!--colocAR AQUI LOS SELECT-->     
+            <option  *ngFor="let tidoooo of Rol" [value]="tidoooo.id_rol" > 
+              {{tidoooo.nombre_rol}}
+            
+            </option>
+      </select>
+      </p>
+
+
+      
+     
+      <p>
+        Editar Tipo de Documento (*): <!--ESTAS SON LAS LISTAN PLEGABLES, EMPLEADOS ES EL VECTOR Y TIDOO LA VARIABLE QUE LE PASA LOS DATOS-->
+        <select formControlName="nuevoid_tipo_identificacion"> 
+          <!--colocAR AQUI LOS SELECT-->     
+            <option *ngFor="let tidoo of Documentos" [value]="tidoo.id_tipo_identificacion" selected>
+              {{tidoo.nombre_tipo_identificacion}}
+               
+            </option>
+      </select>
+      </p>
+    
+    
+
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Rol Asignado:  <input disabled type="text" [value]="tido.nombre_rol" formControlName="nuevonombre_rol" id="nombre_rol">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Tipo de Identificación Asignado:  <input disabled type="text" [value]="tido.nombre_tipo_identificacion" formControlName="nuevonombre_tipo_identificacion" id="nombre_tipo_identificacion">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Primer Nombre:  <input type="text" [value]="tido.primer_nombre" formControlName="nuevoprimer_nombre" id="primer_nombre">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Segundo Nombre:  <input type="text" [value]="tido.segundo_nombre" formControlName="nuevosegundo_nombre" id="segundo_nombre">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Primer Apellido:  <input type="text" [value]="tido.primer_apellido" formControlName="nuevoprimer_apellido" id="primer_apellido">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Segundo Apellido:  <input type="text" [value]="tido.segundo_apellido" formControlName="nuevosegundo_apellido" id="segundo_apellido">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Número de Identificación:  <input type="text" [value]="tido.num_identificacion" formControlName="nuevonum_identificacion" id="num_identificacion">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Contacto:  <input type="text" [value]="tido.correo_electronico" formControlName="nuevocorreo_electronico" id="correo_electronico">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Estado:  <input type="text" [value]="tido.activo" formControlName="nuevoactivo" id="activo">
+      <br/> <!--ESTE ES UN SALTO DE LINEA-->
+      Editar Fecha de Registro:  <input type="datetime" [value]="tido.fecha_registro" formControlName="nuevofecha_registro" id="fecha_registro">
+
+     
+    <!-- Nuevas Iniciales <input type="text" [value]="tido.iniciales_tip_doc" formControlName="nuevoIniTipDoc">-->
+  </li>
+  <br>
+  <button (click)="ActualizarEmpleado()">Actualizar Empleado</button>
+  <br><br>
+</form>
+</div>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- se incluye el link para volver al Inicio -->
+<br><br>
+<div class="dir">
+<h2><a routerLink="/Inicio">INICIO</a></h2>
+</div>
+

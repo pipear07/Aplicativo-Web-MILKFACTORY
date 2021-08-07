@@ -1,0 +1,115 @@
+    <div style="text-align:center">
+      <h1>
+        {{ title }}
+      </h1>
+      <img width="700" alt="Logo Proyecto" src="/assets/logoproyecto.png"> <!--AQUI VA EL LOGO DE GLOBEX-->
+    </div>
+    <br><br>
+    <!--------------------------------------------------------------------------------------------->
+    <!-- para mostrar el listado de Roles -->
+    
+    <div class="lista">
+    
+      <h2>Mostramos los registros de Roles: </h2>
+    
+      <button (click)="consultaRoles()">consultar</button>
+    
+      <div class = "esp">
+        <ul>
+          <h2>{{tituloRoles}}</h2>
+          <li *ngFor="let tido of Roles"> <!--RECUERDEN QUE TipDocs es el vector en .ts-->
+            {{ tido.id_rol }} - <!--IMPORTANTEEEEEEEEEEEEEEEEE!!!-->
+            {{ tido.nombre_rol }}  <!--IMPORTANTE!!!! ESTAS VARIABLES TIENEN QUE SER LAS MISMAS EN EL POSTMAN PARA QUE FUNCIONE, OSEA ABREN EL POSTMAN LO CORREN EN GET, Y COPIAN COMO SE LLAMA CADA VARIABLE DESPUES DEL TIDO, SINO NUNCA LES VA A CORRE-->
+            <!--{{ tido.iniciales_tip_doc}}-->
+          </li> 
+        </ul>
+      </div>
+      <br>
+    </div>
+    
+    <br><br>
+    
+    <!--------------------------------------------------------------------------------------------->
+    <!-- para mostrar un solo Rol -->
+    <div class="bus">
+      <h2>Mostramos el Rol escogido </h2>
+    
+      <h3>Id del Rol a mostrar</h3>
+    
+      <form (ngSubmit)="buscarRoles()" [formGroup]="filtrarRol">
+        <input type="text" formControlName="textfiltro">
+        <!-- <div *ngIf="submitted && f.textfiltro.errors" class="invalid-feedback">
+         <div *ngIf="f.textfiltro.errors.required" class="error-validate"> Id requerido</div>
+        </div>-->
+        <button type="submit" >Buscar Rol</button>
+      </form>
+    
+      <ul>
+        <h2>{{titloRol}}</h2>
+        <li *ngFor="let tido of MiRol">
+          {{ tido.id_rol }} - 
+            {{ tido.nombre_rol}}  <!--OJO TIENEN QUE SER LAS MISMAS VARIABLES DEL POSTMAN, SI TIENE 7 VARIABLES , SON 7 QUE TOCA COLOCAR AQUI EXACTAMENTE COMO SE LLAMAN-->
+            <!--{{ tido.iniciales_tip_doc}}-->
+        </li> <!--IMPORTANTE!! DEBEN TENER LAS MISMAS VARIABLES DEL POSTMAN-->
+      </ul>
+      <br>
+    
+    </div>
+    
+    <br><br>
+    
+    <!--------------------------------------------------------------------------------------------->
+    <!-- para crear un  Rol -->
+    
+    <div class="crea">
+    
+      <h2>Crear un Rol </h2>
+    
+    <form (ngSubmit)="InsertarRol()" [formGroup]="InsertarGRol">
+      Nuevo Rol: <input type="text" formControlName="textRol">
+      <br><br>
+     <!-- Iniciales Rol: <input type="text" formControlName="textiniRol">-->
+    
+     <!-- <div *ngIf="submitted && g.textRol.errors && g.textiniRol.errors " class="invalid-feedback">
+        <div *ngIf="g.textRol.errors.required" class="error-validate"> Id requerido</div>
+      </div>-->
+     
+      <br><br>
+      <button type="submit">InsertarRol</button>
+      <br><br>
+      <input type="reset" value="Limpiar Nuevo Rol">
+    
+    </form>
+    <br>
+    </div>
+    
+    <br><br>
+    
+    <!--------------------------------------------------------------------------------------------->
+    <!-- para actualizar un  Rol -->
+    <div class="edit">
+      <h2>Editar un Rol</h2>
+      <form (ngSubmit)="buscarEditarRol()" [formGroup]="ActualizarARol">
+        Id Rol a Editar:<input type="text" formControlName="ActualizarIdRol">
+    
+     
+        <button type="submit">Buscar Rol Editar</button>
+        <br><br>
+    
+        <li *ngFor="let tido of MiRolE">
+          Nuevo  Rol  <input type="text" [value]="tido.nombre_rol" formControlName="nuevoRol" id="palo1">
+          </li>
+        <br>
+        <button (click)="ActualizarRol()">Actualizar Rol</button>
+        <br><br>
+      </form>
+    </div>
+    
+    
+    <!--------------------------------------------------------------------------------------------->
+    <!-- se incluye el link para volver al Inicio -->
+    <br><br>
+    <div class="dir">
+      <h2><a routerLink="/Inicio">INICIO</a></h2>
+    </div>
+    

@@ -1,0 +1,114 @@
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <img width="700" alt="Logo Proyecto" src="/assets/logoproyecto.png"> <!--AQUI VA EL LOGO DE GLOBEX-->
+</div>
+<br><br>
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar el listado de Tipos de Documentos -->
+
+<div class="lista">
+
+  <h2>Mostramos los registros de Tipos de Documentos: </h2>
+
+
+  <button (click)="consultaTipDocs()">consultar</button>
+
+  <div class = "esp">
+    <ul>
+      <h2>{{tituloTipDocs}}</h2>
+      <li *ngFor="let tido of TipDocs"> <!--RECUERDEN QUE TipDocs es el vector en .ts-->
+        {{ tido.id_tipo_identificacion }} - <!--IMPORTANTEEEEEEEEEEEEEEEEE!!!-->
+        {{ tido.nombre_tipo_identificacion}}  <!--IMPORTANTE!!!! ESTAS VARIABLES TIENEN QUE SER LAS MISMAS EN EL POSTMAN PARA QUE FUNCIONE, OSEA ABREN EL POSTMAN LO CORREN EN GET, Y COPIAN COMO SE LLAMA CADA VARIABLE DESPUES DEL TIDO, SINO NUNCA LES VA A CORRE-->
+        <!--{{ tido.iniciales_tip_doc}}-->
+      </li>
+    </ul>
+  </div>
+  <br>
+</div>
+
+<br><br>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar un solo Tipo de Documento -->
+<div class="bus">
+  <h2>Mostramos el Tipo de Documento escogido </h2>
+
+  <h3>Id del Tipo de Documento a mostrar</h3>
+
+  <form (ngSubmit)="buscarTipDocs()" [formGroup]="filtrarTipDoc">
+    <input type="text" formControlName="textfiltro">
+    <!-- <div *ngIf="submitted && f.textfiltro.errors" class="invalid-feedback">
+     <div *ngIf="f.textfiltro.errors.required" class="error-validate"> Id requerido</div>
+    </div>-->
+    <button type="submit" >Buscar Tipo de Documento</button>
+  </form>
+
+  <ul>
+    <h2>{{titloTipDoc}}</h2>
+    <li *ngFor="let tido of MiTipDoc">
+      {{ tido.id_tipo_identificacion }} - 
+        {{ tido.nombre_tipo_identificacion}}  <!--OJO TIENEN QUE SER LAS MISMAS VARIABLES DEL POSTMAN, SI TIENE 7 VARIABLES , SON 7 QUE TOCA COLOCAR AQUI EXACTAMENTE COMO SE LLAMAN-->
+        <!--{{ tido.iniciales_tip_doc}}-->
+    </li> <!--IMPORTANTE!! DEBEN TENER LAS MISMAS VARIABLES DEL POSTMAN-->
+  </ul>
+  <br>
+
+</div>
+
+<br><br>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para crear un  Tipo de Documento -->
+
+<div class="crea">
+
+    <h2>Crear un Tipo de Documento </h2>
+
+  <form (ngSubmit)="InsertarTipDoc()" [formGroup]="InsertarGTipDoc">
+    Nuevo Tipo de Documento: <input type="text" formControlName="textTipDoc">
+    <br><br>
+   <!-- Iniciales Tipo de Documento: <input type="text" formControlName="textiniTipDoc">-->
+
+   <!-- <div *ngIf="submitted && g.textTipDoc.errors && g.textiniTipDoc.errors " class="invalid-feedback">
+      <div *ngIf="g.textTipDoc.errors.required" class="error-validate"> Id requerido</div>
+    </div>-->
+   
+    <br><br>
+    <button type="submit">Insertar Tipo de Documento</button>
+    <br><br>
+    <input type="reset" value="Limpiar Nuevo Tipo de Documento">
+
+  </form>
+  <br>
+</div>
+
+<br><br>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para actualizar un  Tipo de Documeto -->
+<div class="edit">
+  <h2>Editar un Tipo de Documento</h2>
+  <form (ngSubmit)="buscarEditarTipDoc()" [formGroup]="ActualizarATipDoc">
+    id Tip Doc a editar:<input type="text" formControlName="ActualizarIdipDoc">
+
+ 
+    <button type="submit">Buscar Tip Doc Editar</button>
+    <br><br>
+
+    <li *ngFor="let tido of MiTipDocE">
+      Nuevo  Tip  Doc  <input type="text" [value]="tido.nombre_tipo_identificacion" formControlName="nuevoTipDoc" id="palo1">
+      </li>
+    <br>
+    <button (click)="ActualizarTipDoc()">Actualizar Tipo de Documento</button>
+    <br><br>
+  </form>
+</div>
+
+<!--------------------------------------------------------------------------------------------->
+<!-- se incluye el link para volver al Inicio -->
+<br><br>
+<div class="dir">
+  <h2><a routerLink="/Inicio">INICIO</a></h2>
+</div>

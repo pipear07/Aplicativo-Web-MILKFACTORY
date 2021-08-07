@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div style="text-align:center">
+      <h1>
+        {{ title }}
+      </h1>
+      <img width="700" alt="Logo Proyecto" src="/assets/logoproyecto.png"> <!--AQUI VA EL LOGO DE GLOBEX-->
+    
+    </div>
+    <br><br>
+    <!--------------------------------------------------------------------------------------------->
+    <!-- para mostrar el listado de razas de vacas -->
+    
+    <div class="lista">
+    
+      <h2>Razas de vacas: </h2>
+    
+    
+      <button (click)="ConsultarRazaVacas()">consultar</button>
+    
+      <div class = "esp">
+        <ul>
+          <h2>{{tituloRazavacas}}</h2>
+          <li *ngFor="let tido of RazaVacas"> <!--RECUERDEN QUE TipDocs es el vector en .ts-->
+            <b>N° Registro:</b>{{ tido.id_raza}} - <!--IMPORTANTEEEEEEEEEEEEEEEEE!!!-->
+            <b>Nombre Raza:</b>{{ tido.nombre_raza}}  <!--IMPORTANTE!!!! ESTAS VARIABLES TIENEN QUE SER LAS MISMAS EN EL POSTMAN PARA QUE FUNCIONE, OSEA ABREN EL POSTMAN LO CORREN EN GET, Y COPIAN COMO SE LLAMA CADA VARIABLE DESPUES DEL TIDO, SINO NUNCA LES VA A CORRE-->
+            <!--{{ tido.iniciales_tip_doc}}-->
+          </li>
+        </ul>
+      </div>
+      <br>
+    </div>
+    
+    <br><br>
+    
+    <!--------------------------------------------------------------------------------------------->
+    <!-- para mostrar un solo raza de vaca -->
+    <div class="bus">
+      <h2>Raza de vaca a seleccionar </h2>
+    
+      <h3>Id raza vaca </h3>
+    
+      <form (ngSubmit)="buscarRazavaca()" [formGroup]="FiltrarRazaVaca">
+        <input type="text" formControlName="textfiltro">
+        <!-- <div *ngIf="submitted && f.textfiltro.errors" class="invalid-feedback">
+         <div *ngIf="f.textfiltro.errors.required" class="error-validate"> Id requerido</div>
+        </div>-->
+        <button type="submit" >Buscar Raza Vaca</button>
+      </form>
+    
+      <ul>
+        <h2>{{titloRazavaca}}</h2>
+        <li *ngFor="let tido of MiRazaVaca">
+          <b>N° Registro:</b>{{ tido.id_raza }} - 
+          <b>Nombre Raza:</b>{{ tido.nombre_raza}}  <!--OJO TIENEN QUE SER LAS MISMAS VARIABLES DEL POSTMAN, SI TIENE 7 VARIABLES , SON 7 QUE TOCA COLOCAR AQUI EXACTAMENTE COMO SE LLAMAN-->
+          <b>Descripcion:</b> {{tido.descripcion}}
+        </li> <!--IMPORTANTE!! DEBEN TENER LAS MISMAS VARIABLES DEL POSTMAN-->
+      </ul>
+      <br>
+    
+    </div>
+    
+    <br><br>
+      
+    <!--------------------------------------------------------------------------------------------->
+    <!-- para crear un  Tipo de Documento -->
+    
+    <div class="crea">
+    
+      <h2>Crear una Raza nueva </h2>
+    
+    <form (ngSubmit)="InsertarRazavaca()" [formGroup]="InsertarGRazaVaca">
+      Nombre Raza Nueva: <input type="text" formControlName="textnombre_raza">
+      <br><br>
+      Descripcion Raza: <input type="text" formControlName="textdescripcion">
+    
+     <!-- <div *ngIf="submitted && g.textTipDoc.errors && g.textiniTipDoc.errors " class="invalid-feedback">
+        <div *ngIf="g.textTipDoc.errors.required" class="error-validate"> Id requerido</div>
+      </div>-->
+     
+      <br><br>
+      <button type="submit">Insertar Raza Vaca</button>
+      <br><br>
+      <input type="reset" value="Limpiar Raza Nueva">
+    
+    </form>
+    <br>
+    </div>
+    
+    <br><br>
+    
+    <!--------------------------------------------------------------------------------------------->
+    <!-- para actualizar una raza -->
+    
+    <div class="edit">
+      <h2>Editar Raza </h2>
+      <form (ngSubmit)="buscarEditarRazavaca()" [formGroup]="ActualizarARazaVaca">
+        id Raza a editar:<input type="text" formControlName="ActualizarIdRaza">
+    
+    
+    
+    <!--CUIDADO-->
+    <!-- NO TOCAR ESTOS COMENTARIOS DEL DIV *ngIf de Angular, YA QUE SON PARA DETECTAR LOS ERRORES DEL FRONT END PERO ESTAS DESACTIVADOS YA QUE GENERAN ERROR-->
+      
+    <!-- <div *ngIf="submitted && f.ActualizarIdipDoc.errors" class="invalid-feedback">
+          <div *ngIf="f.ActualizarIdipDoc.errors.required" class="error-validate">Id requerido</div>
+        </div> -->
+        <button  type="submit">Buscar Raza</button>
+        <br><br>
+    
+        <li *ngFor="let tido of MiRazaVacaE"><!--IMPORTANTE!! DEBEN TENER LAS MISMAS VARIABLES DEL POSTMAN-->
+          Nueva Raza:  <input disabled type="text" [value]="tido.nombre_raza" formControlName="nuevaRaza">
+          <br><br> 
+          Nueva descripcion: <input disabled type="text" [value]="tido.descripcion" formControlName="nuevadescripcion">
+        </li>
+        <br>
+        <button (click)="ActualizarRazavaca()">Actualizar Raza</button>
+        <br><br>
+      </form>
+    </div>
+    
+    
+    
+    <!--------------------------------------------------------------------------------------------->
+    <!-- se incluye el link para volver al Inicio -->
+    <br><br>
+    <div class="dir">
+      <h2><a routerLink="/Inicio">INICIO</a></h2>
+    </div>
+  </body>
+</html>
